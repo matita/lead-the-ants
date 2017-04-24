@@ -174,7 +174,7 @@ Lead.Game.prototype = {
 
   drawFirstLevel: function () {
 
-    var postIt1 = this.drawPostIt(230, 360, 'Find the food.\n(to your right this time)', -3);
+    var postIt1 = this.drawPostIt(200, 360, 'Find the food\n(click to your right this time)', -3);
     this.drawPostIt(postIt1.x + 20, postIt1.y + postIt1.height + 30, 'You have 1 minute\nbefore ants leave the nest.', 4);
 
     this.drawPostIt(750, 300, 'This is food,\ncome closer.', 3);
