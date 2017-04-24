@@ -16,13 +16,16 @@
         'main.js'
       ];
 
+      var Lead = Lead || {};
+      Lead.version = '0.1.2';
+
       function includeScripts() {
         var s = scripts.shift();
         if (!s)
           return;
 
         var t = document.createElement('script');
-        t.src = 'js/' + s + (location.hostname == 'localhost' ? '?' + Math.random() : '');
+        t.src = 'js/' + s + '?' + (location.hostname == 'localhost' ? Math.random() : Lead.version);
         t.onload = includeScripts;
         document.body.appendChild(t);
       }
