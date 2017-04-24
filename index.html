@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Lead the ants</title>
+  </head>
+  <body>
+
+    <script src="js/libs/phaser.min.js"></script>
+    <script>
+      var scripts = [
+        'entities/drop.js',
+        'entities/ant.js',
+        'entities/player.js',
+        'entities/food.js',
+        'entities/nest.js',
+        'game.js',
+        'main.js'
+      ];
+
+      function includeScripts() {
+        var s = scripts.shift();
+        if (!s)
+          return;
+
+        var t = document.createElement('script');
+        t.src = 'js/' + s + (location.hostname == 'localhost' ? '?' + Math.random() : '');
+        t.onload = includeScripts;
+        document.body.appendChild(t);
+      }
+      includeScripts();
+    </script>
+  </body>
+</html>
